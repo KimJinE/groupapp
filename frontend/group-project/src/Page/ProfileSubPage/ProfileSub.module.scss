@@ -1,0 +1,10 @@
+//profile page
+.profile_header {
+    display: flex;
+    justify-content: space-between;
+
+    .action_bar {
+        display: flex;
+        gap: 10px;
+    }
+}

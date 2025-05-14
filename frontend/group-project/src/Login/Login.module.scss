@@ -1,0 +1,62 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    .left_side {
+        width: 50%;
+        background-color: black;
+        color: white;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .right_side {
+        width: 50%;
+        padding: 2.5rem;
+        position: relative;
+        overflow-y: scroll;
+        height: 100%;
+        display: flex;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .left_side {
+            display: none;
+        }
+        .right_side {
+            width: 100%;
+        }
+    }
+}
+
+.login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin: auto;
+
+    .righttop_action {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+    }
+
+    .form {
+        width: 350px;
+        
+        .form_field {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .submit_button {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+# Root
+.DS_Store
+.env
+.env.local
+
+# Node / React (frontend)
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.next/
+
+# Java / Spring Boot (backend)
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/*.iml
+backend/.idea/
+backend/*.log
+backend/.env
+
+# Logs
+logs/
+*.log
+
+# OS
+Thumbs.db
+
