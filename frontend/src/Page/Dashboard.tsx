@@ -45,7 +45,7 @@ function Dashboard() {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token');
-            const response = await axios.get<Group[]>("/api/groups", {
+            const response = await axios.get<Group[]>("https://api.didyoudonexx.com/api/groups", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -70,7 +70,7 @@ function Dashboard() {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token');
-            const response: AxiosResponse<string> = await axios.post(`/api/groups/${groupid}/complete`, {},{
+            const response: AxiosResponse<string> = await axios.post(`https://api.didyoudonexx.com/api/groups/${groupid}/complete`, {},{
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

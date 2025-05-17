@@ -27,7 +27,7 @@ const JoinGroup: React.FC<JoinGroupProps> = ({onGroupJoined}) => {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token');
-            const response: AxiosResponse = await axios.post<string>("/api/groups/join", {
+            const response: AxiosResponse = await axios.post<string>("https://api.didyoudonexx.com/api/groups/join", {
                 groupId: groupId,
             }, {
                 headers: {

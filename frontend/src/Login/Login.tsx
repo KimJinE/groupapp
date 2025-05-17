@@ -49,9 +49,14 @@ function Login() {
         try {
             setLoginError(false);
             setIsLoading(true);
-            const response: AxiosResponse<{ token: string }> = await axios.post("/api/auth/login", {
+            const response: AxiosResponse<{ token: string }> = await axios.post("https://api.didyoudonexx.com/api/auth/login", {
                 username: data.username,
                 password: data.password
+            },{
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                withCredentials: false 
             })
             if (response.data) {
                 localStorage.setItem('token', response.data.token);

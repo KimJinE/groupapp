@@ -54,7 +54,7 @@ const CreateGroup: React.FC<CreateGroupProps> = ({onGroupCreated}) => {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token');
-            const response: AxiosResponse = await axios.post<string>("/api/groups/create", {
+            const response: AxiosResponse = await axios.post<string>("https://api.didyoudonexx.com/api/groups/create", {
                 name: value.groupname,
                 description: value.description,
                 requiresApproval: value.requiresApproval,

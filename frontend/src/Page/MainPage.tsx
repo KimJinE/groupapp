@@ -35,7 +35,7 @@ function MainPage() {
             }
 
             try {
-                const response = await axios.post("api/user/update", {
+                const response = await axios.post("https://api.didyoudonexx.com/api/user/update", {
                     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
                 } , {
                     headers: {

@@ -60,7 +60,7 @@ function Register() {
         try {
             setRegisterError(false);
             setIsLoading(true)
-            const response: AxiosResponse<{ token: string }> = await axios.post("/api/auth/register", {
+            const response: AxiosResponse<{ token: string }> = await axios.post("https://api.didyoudonexx.com/api/auth/register", {
                 username: data.username,
                 password: data.password,
                 email: data.email
@@ -89,7 +89,7 @@ function Register() {
                 <div className={styles.form_field}>
                     {registerError && <Alert variant="destructive">
                         <AlertCircle className="h-4 w-4" />
-                        <AlertTitle>Username already exist</AlertTitle>
+                        <AlertTitle>Username or Email already exist</AlertTitle>
                     </Alert>}
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

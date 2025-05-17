@@ -53,7 +53,7 @@ const GroupDetail: React.FC<GroupDetailProps> = ({ open, setOpen, setSelectGroup
     const fetchMembers = useCallback(async() => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get<Member[]>(`/api/groups/${selectGroup?.groupId}/members`, {
+            const response = await axios.get<Member[]>(`https://api.didyoudonexx.com/api/groups/${selectGroup?.groupId}/members`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -94,13 +94,13 @@ const GroupDetail: React.FC<GroupDetailProps> = ({ open, setOpen, setSelectGroup
             const token = localStorage.getItem('token');
             let response;
             if (isAdmin) {
-                response = await axios.delete(`/api/groups/${selectGroup?.groupId}/delete`, {
+                response = await axios.delete(`https://api.didyoudonexx.com/api/groups/${selectGroup?.groupId}/delete`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 });
             } else {
-                response = await axios.delete(`/api/groups/${selectGroup?.groupId}/leave`, {
+                response = await axios.delete(`https://api.didyoudonexx.com/api/groups/${selectGroup?.groupId}/leave`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -118,7 +118,7 @@ const GroupDetail: React.FC<GroupDetailProps> = ({ open, setOpen, setSelectGroup
     async function removeMember(memberId: string) {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.delete(`/api/groups/${selectGroup?.groupId}/member/${memberId}/remove`, {
+            const response = await axios.delete(`https://api.didyoudonexx.com/api/groups/${selectGroup?.groupId}/member/${memberId}/remove`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

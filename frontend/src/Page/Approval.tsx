@@ -33,7 +33,7 @@ function Approval() {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token');
-            const response = await axios.get<ApprovalData[]>("/api/groups/pendingmembers", {
+            const response = await axios.get<ApprovalData[]>("https://api.didyoudonexx.com/api/groups/pendingmembers", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -58,7 +58,7 @@ function Approval() {
         try {
             setIsLoading(true);
             const token = localStorage.getItem('token');
-            const response = await axios.post(`/api/groups/${groupId}/members/${userId}/approve`, {},{
+            const response = await axios.post(`https://api.didyoudonexx.com/api/groups/${groupId}/members/${userId}/approve`, {},{
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

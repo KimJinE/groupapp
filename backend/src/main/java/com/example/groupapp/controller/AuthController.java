@@ -70,11 +70,11 @@ public class AuthController {
         verificationToken.setExpiryDate(LocalDateTime.now().plusDays(1));
         verificationTokenRepository.save(verificationToken);
 
-        String verifyLink = "http://localhost.com:/api/auth/verify?token=" + token;
-        String subject = "Verify your email";
-        String body = "Welcome, " + user.getUsername() + "!\n\nPlease verify your email by clicking the link below:\n" + verifyLink;
-
-        emailService.sendEmail(user.getEmail(), subject, body);
+//        String verifyLink = "http://localhost.com:/api/auth/verify?token=" + token;
+//        String subject = "Verify your email";
+//        String body = "Welcome, " + user.getUsername() + "!\n\nPlease verify your email by clicking the link below:\n" + verifyLink;
+//
+//        emailService.sendEmail(user.getEmail(), subject, body);
 
         return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully");
     }

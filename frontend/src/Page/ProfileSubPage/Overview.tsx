@@ -62,7 +62,7 @@ function ProfileOverview() {
         const token = localStorage.getItem("token");
         try {
             setIsLoading(true);
-            const response = await axios.post("api/user/update", {
+            const response = await axios.post("https://api.didyoudonexx.com/api/user/update", {
                 displayName: value.displayName,
             } , {
                 headers: {
