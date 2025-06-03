@@ -130,7 +130,7 @@ public class GroupController {
                             group.getName(),
                             group.getDescription(),
                             member.isAdmin(),
-                            dailyCompletionRepository.existsByMemberAndDate(member, LocalDate.now()),
+                            dailyCompletionRepository.existsByMemberAndDate(member, today),
                             member.getGroup().getCreatedAt(),
                             member.getGroup().getTimezone(),
                             memberCount,
@@ -217,6 +217,7 @@ public class GroupController {
         completion.setDate(today);
         completion.setCompletedAt(completedAt);
         completion.setTimezone(user.getTimezone());
+        completion.setComplete(true);
 
         dailyCompletionRepository.save(completion);
 
